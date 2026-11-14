@@ -29,20 +29,7 @@
 
 ---
 
-## 3. Kiến trúc Luồng AI Agent (LangGraph Workflow)
 
-### 3.1. Định nghĩa Trạng thái (AgentState)
-```python
-from typing import TypedDict, Optional, List, Literal
-
-class GateKeeperState(TypedDict):
-    tenant_id: str                  # Mã căn hộ (đảm bảo Tenant Isolation)
-    user_id: str                    # ID người gửi yêu cầu
-    intent: Literal["visitor_reg", "resident_card", "bill_verify", "incident_report", "facility_booking"]
-    raw_input: str                  # Tin nhắn văn bản của cư dân
-    media_urls: List[str]           # Ảnh CCCD, biển số xe, hóa đơn hoặc video sự cố
-    visitor_info: Optional[dict]    # {name, phone, id_number, license_plate, visit_type, start_time, end_time, is_overnight}
-    risk_score: float               # Điểm rủi ro bất thường (0.0 -> 1.0)
     anomaly_reasons: List[str]      # Lý do cảnh báo (ngoài giờ, tần suất cao, blacklist)
     requires_hitl: bool             # Cờ bắt buộc Bảo an phê duyệt
     hitl_status: Optional[Literal["PENDING", "APPROVED", "REJECTED"]]
