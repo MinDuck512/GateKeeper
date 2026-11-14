@@ -21,12 +21,11 @@
 
 | ID | Vai trò | Tính năng | Mô tả User Story | Tiêu chí Chấp nhận (Acceptance Criteria) |
 | :--- | :--- | :--- | :--- | :--- |
-| **US01** | Cư dân | Đăng ký khách thường | Là cư dân, tôi muốn nhắn tin tự nhiên (VD: *"Cho anh Nam giao hàng SĐT 0912xxx vào sảnh B lúc 14h hôm nay"*) để nhận ngay mã QR/OTP gửi cho khách. | Agent trích xuất đúng Tên, Loại khách, SĐT, Khung giờ; sinh mã QR/OTP hiệu lực trong khung giờ đăng ký. |
-| **US02** | Cư dân | Đăng ký khách qua đêm (HITL) | Là cư dân, tôi muốn đăng ký cho người thân ở lại qua đêm kèm ảnh CCCD để bảo an nắm thông tin và phê duyệt. | Agent trích xuất OCR từ ảnh CCCD, nhận diện yêu cầu "qua đêm", chuyển trạng thái sang `PENDING_APPROVAL` và thông báo chờ Bảo an duyệt. |
-| **US03** | Cư dân | Kiểm chứng hóa đơn & Đặt tiện ích | Là cư dân, tôi muốn gửi ảnh hóa đơn điện nước hoặc đặt lịch sân cầu lông/BBQ để hệ thống kiểm tra chi phí và hạn mức. | Agent trích xuất số chữ điện/nước, gọi hàm Python tính đúng biểu phí bậc thang tới từng đồng; kiểm tra quota căn hộ trước khi xác nhận đặt chỗ. |
-| **US04** | Bảo an | Quét mã & Duyệt HITL | Là bảo an tại cổng, tôi muốn quét mã QR/OTP để cho khách qua cổng và duyệt các yêu cầu khách qua đêm/ngoài giờ ngay trên màn hình trực. | Thời gian tra cứu mã < 500ms; hiển thị rõ thông tin khách, căn hộ mời và nút `Approve` / `Reject` cho các yêu cầu HITL. |
-| **US05** | Bảo an / BQL | Cảnh báo bất thường | Là bảo an/BQL, tôi muốn nhận cảnh báo đỏ khi một cá nhân/biển số xe ra vào quá 5 lần/ngày tại nhiều căn hộ khác nhau hoặc đi ngoài giờ. | Node `alert` tự động gắn cờ `ANOMALY_DETECTED`, đẩy thông báo thời gian thực lên màn hình bảo an và Dashboard BQL. |
-| **US06** | Ban Quản lý | Dashboard & Eval | Là BQL, tôi muốn xem biểu đồ lưu lượng theo giờ, danh sách phản ánh sự cố và tỉ lệ cảnh báo đúng của AI để tối ưu nhân sự trực cổng. | Hiển thị biểu đồ lưu lượng theo chuẩn GTFS mô phỏng, danh sách ticket phân loại theo mẫu NYC 311 và bảng chỉ số Precision/Recall của Agent. |
+| **US01** | Cư dân | Đăng ký khách thường | Nhắn tin tự nhiên (VD: *"Cho anh Nam giao hàng SĐT 0912xxx vào sảnh B lúc 14h hôm nay"*) để nhận ngay mã QR/OTP gửi cho khách. | Agent trích xuất đúng Tên, Loại khách, SĐT, Khung giờ; sinh mã QR/OTP hiệu lực trong khung giờ đăng ký. |
+| **US02** | Cư dân | Đăng ký khách qua đêm (HITL) | Đăng ký cho người thân ở lại qua đêm kèm ảnh CCCD để bảo an nắm thông tin và phê duyệt. | Agent trích xuất OCR từ ảnh CCCD, nhận diện yêu cầu "qua đêm", chuyển trạng thái sang `PENDING_APPROVAL` và thông báo chờ Bảo an duyệt. |
+| **US03** | Bảo an | Quét mã & Duyệt HITL | Quét mã QR/OTP để cho khách qua cổng và duyệt các yêu cầu khách qua đêm/ngoài giờ ngay trên màn hình trực. | Thời gian tra cứu mã < 500ms; hiển thị rõ thông tin khách, căn hộ mời và nút `Approve` / `Reject` cho các yêu cầu HITL. |
+| **US04** | Bảo an / BQL | Cảnh báo bất thường | Nhận cảnh báo đỏ khi một cá nhân/biển số xe ra vào quá 5 lần/ngày tại nhiều căn hộ khác nhau hoặc đi ngoài giờ. | Node `alert` tự động gắn cờ `ANOMALY_DETECTED`, đẩy thông báo thời gian thực lên màn hình bảo an và Dashboard BQL. |
+| **US05** | Ban Quản lý | Dashboard & Eval | Xem biểu đồ lưu lượng theo giờ, danh sách phản ánh sự cố và tỉ lệ cảnh báo đúng của AI để tối ưu nhân sự trực cổng. | Hiển thị biểu đồ lưu lượng theo chuẩn GTFS mô phỏng, danh sách ticket phân loại theo mẫu NYC 311 và bảng chỉ số Precision/Recall của Agent. |
 
 ---
 
