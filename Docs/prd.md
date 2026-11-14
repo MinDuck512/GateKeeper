@@ -28,11 +28,3 @@
 | **US05** | Ban Quản lý | Dashboard & Eval | Xem biểu đồ lưu lượng theo giờ, danh sách phản ánh sự cố và tỉ lệ cảnh báo đúng của AI để tối ưu nhân sự trực cổng. | Hiển thị biểu đồ lưu lượng theo chuẩn GTFS mô phỏng, danh sách ticket phân loại theo mẫu NYC 311 và bảng chỉ số Precision/Recall của Agent. |
 
 ---
-
-
-    anomaly_reasons: List[str]      # Lý do cảnh báo (ngoài giờ, tần suất cao, blacklist)
-    requires_hitl: bool             # Cờ bắt buộc Bảo an phê duyệt
-    hitl_status: Optional[Literal["PENDING", "APPROVED", "REJECTED"]]
-    pass_data: Optional[dict]       # {pass_id, qr_payload, otp_code, expires_at}
-    deterministic_result: Optional[dict] # Kết quả tính phí bậc thang / phân bổ tiện ích
-    response_message: str           # Phản hồi trả về cho người dùng
